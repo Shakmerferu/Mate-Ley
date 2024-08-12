@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" width="36" height="27.7" viewBox="0 0 36 27.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1a1a1a;
+      }
+    </style>
+  </defs>
+  <g id="menu_inicio">
+    <path class="cls-1" d="M14.6,27.1c-.8.8-2.1.8-2.9,0L.6,16.1c-.8-.8-.8-2.1,0-2.9l2.8-2.8c.8-.8,2.1-.8,2.9,0l6.8,6.8L29.7.6c.8-.8,2.1-.8,2.9,0l2.8,2.8c.8.8.8,2.1,0,2.9L14.6,27.1Z"/>
+  </g>
+</svg>

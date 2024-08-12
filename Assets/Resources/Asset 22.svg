@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" width="234.35" height="317.42" viewBox="0 0 234.35 317.42">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-2 {
+        font-family: Adrianna-Demibold, Adrianna;
+        font-size: 90.76px;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <g id="menu_inicio">
+    <g>
+      <g>
+        <path class="cls-1" d="M157.7,0c-14.37,0-26.16,11.79-26.16,26.16,0,24.68,26.16,57.1,26.16,57.1,0,0,26.16-32.42,26.16-57.1,0-14.37-11.79-26.16-26.16-26.16ZM157.7,40.53c-7.74,0-14-6.26-14-14s6.26-14,14-14,14,6.26,14,14c.37,7.74-6.26,14-14,14Z"/>
+        <path class="cls-1" d="M105.75,100.95l-43.1,43.1c2.95,1.84,6.26,3.32,9.95,3.32h99.84c9.21,0,16.58-7.37,16.58-16.21l-83.26-30.21Z"/>
+        <path class="cls-1" d="M164.7,88.79l-7,8.47-7-8.47c-.37-.74-7-8.47-13.26-19.89l-20.26,20.26,71.84,25.79V44.95c-7.37,22.47-23.58,42.74-24.32,43.84Z"/>
+        <path class="cls-1" d="M123.07,26.16c0-4.05.74-8.11,2.21-11.79h-52.68c-9.21,0-16.58,7.37-16.58,16.58v99.47l74.79-74.79c-4.42-9.58-7.74-19.89-7.74-29.47Z"/>
+      </g>
+      <text class="cls-2" transform="translate(0 289.65)"><tspan class="cls-3" x="0" y="0">M</tspan><tspan x="79.51" y="0">a</tspan><tspan class="cls-4" x="132.51" y="0">p</tspan><tspan x="181.34" y="0">a</tspan></text>
+    </g>
+  </g>
+</svg>

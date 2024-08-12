@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" width="179.8" height="292.74" viewBox="0 0 179.8 292.74">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        font-family: Adrianna-Demibold, Adrianna;
+        font-size: 90.76px;
+        font-weight: 300;
+      }
+    </style>
+  </defs>
+  <g id="menu_inicio">
+    <g>
+      <g>
+        <path class="cls-1" d="M19.16,9.21c4.05,2.21,61.16,32.79,63.37,33.89,2.21,1.11,4.79,1.84,7.74,1.84s5.53-.74,7.74-1.84,59.31-31.68,63.37-33.89c4.05-2.21,8.11-9.21.37-9.21H18.79c-7.74,0-4.05,7,.37,9.21Z"/>
+        <path class="cls-1" d="M162.84,26.16c-4.79,2.58-62.26,32.42-65.21,33.89s-4.79,1.84-7.74,1.84-4.79-.37-7.74-1.84S21.74,28.37,16.95,26.16c-3.32-1.84-3.32.37-3.32,1.84v61.89c0,3.68,4.79,8.11,8.47,8.11h135.58c3.68,0,8.47-4.42,8.47-8.11V28c0-1.47,0-3.68-3.32-1.84Z"/>
+      </g>
+      <text class="cls-2" transform="translate(0 264.96)"><tspan class="cls-3" x="0" y="0">M</tspan><tspan x="79.51" y="0">ail</tspan></text>
+    </g>
+  </g>
+</svg>
