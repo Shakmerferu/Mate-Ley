@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Emails : MonoBehaviour
+[Serializable]
+public class Email
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string remitente;
+    public string asunto;
+    public string contenido;
+    public string nivelDificultad;
+    public string[] documentos;
+    public string certificado;
+    public Sprite[] imagenesMercancia;
 }
