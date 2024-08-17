@@ -1,9 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Clase de datos simple que no extiende de MonoBehaviour
+// Marca la clase Empresa como una extensión de una clase nativa de Unity
 public class Empresa
 {
+    // Propiedades de la clase Empresa
     public string Nombre { get; set; }
     public string Remitente { get; set; }
     public string Asunto { get; set; }
@@ -19,8 +20,8 @@ public class Empresa
     public string FechaCaducidad { get; set; }
 
     // Constructor
-    public Empresa(string nombre, string remitente, string asunto, string textoCorreo, string archivoAdjunto, 
-                   string nombreEmpresa, string cuitEmpresa, string domicilioEmpresa, string tipoExportacion, 
+    public Empresa(string nombre, string remitente, string asunto, string textoCorreo, string archivoAdjunto,
+                   string nombreEmpresa, string cuitEmpresa, string domicilioEmpresa, string tipoExportacion,
                    string numeroDespacho, string pesoCantidad, string destino, string fechaCaducidad)
     {
         Nombre = nombre;
@@ -38,9 +39,8 @@ public class Empresa
         FechaCaducidad = fechaCaducidad;
     }
 }
-
-// Esta clase extiende de MonoBehaviour porque es usada en Unity
-public class GestorEmpresas : MonoBehaviour
+// Esta clase extiende de MonoBehaviour porque es usada en UnitypublicclassGestorEmpresas : MonoBehaviour
+public class GestorEmpresa : MonoBehaviour
 {
     public List<Empresa> empresas;
 
@@ -68,9 +68,9 @@ public class GestorEmpresas : MonoBehaviour
             "23121EC01000023A", "3kg", "Uruguay", "18/12/24"));
 
         empresas.Add(new Empresa(
-            "Sal del caldén", "exportaciones@saldelcalden.com.ar", "Exportación de Sal - Sal del caldén",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestra sal bajo la marca \"Sal del Caldén\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nSal del caldén\nexportaciones@saldelcalden.com.ar",
-            "Certificado de exportación.", "Sal del caldén", "20-97742298-9", "José Viscardia 300", "Sal",
+            "Sal del Caldén", "exportaciones@saldelcalden.com.ar", "Exportación de Sal - Sal del Caldén",
+            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestra sal bajo la marca \"Sal del Caldén\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nSal del Caldén\nexportaciones@saldelcalden.com.ar",
+            "Certificado de exportación.", "Sal del Caldén", "20-97742298-9", "José Viscardia 300", "Sal",
             "23091EC01000023A", "2kg", "Perú", "20/09/24"));
 
         empresas.Add(new Empresa(
@@ -83,12 +83,12 @@ public class GestorEmpresas : MonoBehaviour
             "TechPampa", "exportaciones@techpampa.com.ar", "Exportación de Software de Transacciones - TechPampa",
             "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro software de transacciones bajo la marca \"TechPampa\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nTechPampa\nexportaciones@techpampa.com.ar",
             "Certificado de exportación.", "TechPampa", "20-87658449-9", "José Viscardia 25", "Software",
-            "23081EC01000023A", "??", "Estados Unidos", "20/08/24"));
+            "23081EC01000023A", "N/A", "Estados Unidos", "20/08/24"));
 
         empresas.Add(new Empresa(
             "Aceites del Sol", "exportaciones@aceitesdelsol.com.ar", "Exportación de Aceite de Girasol - Aceites del Sol",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro aceite de girasol bajo la marca \"Aceites del Sol\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nAceites del sol\nexportaciones@aceitesdelsol.com.ar",
-            "Certificado de exportación.", "Aceites del sol", "20-17158141-9", "José Viscardia 750", "Aceite de girasol",
+            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro aceite de girasol bajo la marca \"Aceites del Sol\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nAceites del Sol\nexportaciones@aceitesdelsol.com.ar",
+            "Certificado de exportación.", "Aceites del Sol", "20-17158141-9", "José Viscardia 750", "Aceite de girasol",
             "23101EC01000023A", "4L", "Chile", "15/10/24"));
 
         empresas.Add(new Empresa(
@@ -100,19 +100,15 @@ public class GestorEmpresas : MonoBehaviour
         empresas.Add(new Empresa(
             "Semillas del Sol", "exportaciones@semillasdelsol.com.ar", "Exportación de Semillas de Girasol - Semillas del Sol",
             "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestras semillas de girasol bajo la marca \"Semillas del Sol\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nSemillas del Sol\nexportaciones@semillasdelsol.com.ar",
-            "Certificado de exportación.", "Semillas del sol", "20-98929895-9", "José Viscardia 150", "Semillas de girasol",
+            "Certificado de exportación.", "Semillas del Sol", "20-98929895-9", "José Viscardia 150", "Semillas de girasol",
             "23091EC01000023A", "10kg", "Chile", "30/09/24"));
 
         empresas.Add(new Empresa(
-            "YesoPam", "exportaciones@yesopam.com.ar", "Exportación de Manufacturas de Yeso - YesoPam",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestras manufacturas de yeso bajo la marca \"YesoPam\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nYesoPam\nexportaciones@yesopam.com.ar",
-            "Certificado de exportación.", "YesoPam", "20-97341981-9", "José Viscardia 750", "Manufacturas de Yeso",
-            "23081EC01000023A", "4kg", "Brasil", "24/08/24"));
+            "YesoPam", "exportaciones@yesopam.com.ar", "Exportación de Yeso - YesoPam",
+            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro yeso bajo la marca \"YesoPam\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nYesoPam\nexportaciones@yesopam.com.ar",
+            "Certificado de exportación.", "YesoPam", "20-19159815-9", "José Viscardia 300", "Yeso",
+            "23131EC01000023A", "8kg", "Bolivia", "20/11/24"));
 
-        empresas.Add(new Empresa(
-            "FertiPam", "exportaciones@fertipam.com.ar", "Exportación de Fertilizantes - FertiPam",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro fertilizante bajo la marca \"FertiPam\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nFertiPam\nexportaciones@fertipam.com.ar",
-            "Certificado de exportación.", "FertiPam", "20-87141817-9", "José Viscardia 650", "Fertilizantes",
-            "23081EC01000023A", "20kg", "Brasil", "14/08/24"));
+        // Agrega más empresas según sea necesario...
     }
 }

@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 96188113}
   - component: {fileID: 96188115}
   - component: {fileID: 96188114}
+  - component: {fileID: 96188116}
   m_Layer: 5
   m_Name: mensaje
   m_TagString: Untagged
@@ -466,6 +467,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96188112}
   m_CullTransparentMesh: 1
+--- !u!114 &96188116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96188112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1 &125271758
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +635,7 @@ GameObject:
   - component: {fileID: 183303694}
   - component: {fileID: 183303693}
   - component: {fileID: 183303692}
+  - component: {fileID: 183303695}
   m_Layer: 5
   m_Name: ArchivoPDF2
   m_TagString: Untagged
@@ -720,6 +744,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183303690}
   m_CullTransparentMesh: 1
+--- !u!114 &183303695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183303690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1 &211065402
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,9 +1004,8 @@ GameObject:
   - component: {fileID: 281801743}
   - component: {fileID: 281801742}
   - component: {fileID: 281801741}
-  - component: {fileID: 281801740}
   m_Layer: 5
-  m_Name: Button (Legacy) (4)
+  m_Name: Email5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -986,18 +1031,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 626, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &281801740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281801738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &281801741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,9 +1474,8 @@ GameObject:
   - component: {fileID: 429934703}
   - component: {fileID: 429934702}
   - component: {fileID: 429934701}
-  - component: {fileID: 429934700}
   m_Layer: 5
-  m_Name: Button (Legacy) (2)
+  m_Name: Email3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1469,18 +1501,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 626, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &429934700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429934698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &429934701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2027,9 +2047,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 603427911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1001 &638305061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2435,9 +2465,8 @@ GameObject:
   - component: {fileID: 746960341}
   - component: {fileID: 746960340}
   - component: {fileID: 746960344}
-  - component: {fileID: 746960345}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Email1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2597,18 +2626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteActivo: {fileID: 21300000, guid: e09d7519a41806f469efdaefd10b8f62, type: 3}
   spritePasivo: {fileID: 21300000, guid: 37d7c9075e9a62e49b12c0304b5e6294, type: 3}
---- !u!114 &746960345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 746960338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &750606172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,9 +3095,8 @@ GameObject:
   - component: {fileID: 942622280}
   - component: {fileID: 942622279}
   - component: {fileID: 942622278}
-  - component: {fileID: 942622277}
   m_Layer: 5
-  m_Name: Button (Legacy) (3)
+  m_Name: Email4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3106,18 +3122,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 626, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &942622277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942622275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &942622278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3808,9 +3812,8 @@ GameObject:
   - component: {fileID: 1180442917}
   - component: {fileID: 1180442916}
   - component: {fileID: 1180442915}
-  - component: {fileID: 1180442914}
   m_Layer: 5
-  m_Name: Button (Legacy) (1)
+  m_Name: Email2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3836,18 +3839,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 626, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1180442914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1180442912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1180442915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4136,6 +4127,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205338575}
   m_CullTransparentMesh: 1
+--- !u!1 &1213311713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213311715}
+  - component: {fileID: 1213311714}
+  m_Layer: 0
+  m_Name: EmailsBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1213311714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213311713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1213311715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213311713}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2321.767, y: 1257.686, z: 10.188943}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1216822953
 GameObject:
   m_ObjectHideFlags: 0
@@ -4630,6 +4665,7 @@ GameObject:
   - component: {fileID: 1305324680}
   - component: {fileID: 1305324679}
   - component: {fileID: 1305324678}
+  - component: {fileID: 1305324681}
   m_Layer: 5
   m_Name: ArchivoPDF3
   m_TagString: Untagged
@@ -4738,6 +4774,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305324676}
   m_CullTransparentMesh: 1
+--- !u!114 &1305324681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305324676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1 &1409283700
 GameObject:
   m_ObjectHideFlags: 0
@@ -5100,6 +5158,7 @@ GameObject:
   - component: {fileID: 1630092927}
   - component: {fileID: 1630092926}
   - component: {fileID: 1630092925}
+  - component: {fileID: 1630092928}
   m_Layer: 5
   m_Name: ArchivoPDF1
   m_TagString: Untagged
@@ -5208,6 +5267,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630092923}
   m_CullTransparentMesh: 1
+--- !u!114 &1630092928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630092923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1 &1652619082
 GameObject:
   m_ObjectHideFlags: 0
@@ -6003,9 +6084,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1935113127}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f12d665bccf1ea4bbcdf25450978d3a, type: 3}
+  m_Script: {fileID: 11500000, guid: b50c6ff93fc25e047a9abab2b0965118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  remitente: 
+  asunto: 
+  textoMensaje: 
+  activarPDF1: 0
+  activarPDF2: 0
+  activarPDF3: 0
+  botonPDF1: {fileID: 0}
+  botonPDF2: {fileID: 0}
+  botonPDF3: {fileID: 0}
+  gestorEmpresas: {fileID: 1213311714}
 --- !u!1 &2093469517
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,3 +6294,4 @@ SceneRoots:
   - {fileID: 1839436828}
   - {fileID: 951856012}
   - {fileID: 594697812}
+  - {fileID: 1213311715}

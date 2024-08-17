@@ -1,41 +1,53 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Mensaje : MonoBehaviour
 {
-    public string remitente;  // Remitente
-    public string asunto;     // Asunto
-    public string textoMensaje; // Texto del mensaje
+    [SerializeField] private Text textoRemitente;
+    [SerializeField] private Text textoAsunto;
+    [SerializeField] private Text textoMensaje;
+    [SerializeField] private Text textoInformacionAdicional;
 
-    public bool activarPDF1;  // Activar botón PDF1
-    public bool activarPDF2;  // Activar botón PDF2
-    public bool activarPDF3;  // Activar botón PDF3
+    [SerializeField] private Button botonPDF1;
+    [SerializeField] private Button botonPDF2;
+    [SerializeField] private Button botonPDF3;
 
-    public Button botonPDF1;  // Botón para PDF1
-    public Button botonPDF2;  // Botón para PDF2
-    public Button botonPDF3;  // Botón para PDF3
+    [SerializeField] private InputField inputBusqueda;
+
+    public GestorEmpresas gestorEmpresas;
+
+    private List<Email> emailsFiltrados; // Lista para almacenar los emails filtrados
 
     void Start()
     {
-        // Configurar botones según los booleanos
-        botonPDF1.gameObject.SetActive(activarPDF1);
-        botonPDF2.gameObject.SetActive(activarPDF2);
-        botonPDF3.gameObject.SetActive(activarPDF3);
+        // Inicializar la lista de emails filtrados
+        emailsFiltrados = gestorEmpresas.empresas.Select(empresa => ObtenerEmailDesdeEmpresa(empresas.IndexOf(empresa))).ToList();
+
+        // Asignar el evento de búsqueda al InputField
+        inputBusqueda.onValueChanged.AddListener(BuscarEmail);
     }
 
-    // Método para inicializar los datos del mensaje
-    public void Inicializar(string remitente, string asunto, string textoMensaje, bool activarPDF1, bool activarPDF2, bool activarPDF3)
+    public void OnClickEmail(int index)
     {
-        this.remitente = remitente;
-        this.asunto = asunto;
-        this.textoMensaje = textoMensaje;
-        this.activarPDF1 = activarPDF1;
-        this.activarPDF2 = activarPDF2;
-        this.activarPDF3 = activarPDF3;
+        // Obtener el email seleccionado de la lista filtrada
+        Email emailSeleccionado = emailsFiltrados[index];
 
-        // Configurar los botones al inicializar
-        botonPDF1.gameObject.SetActive(activarPDF1);
-        botonPDF2.gameObject.SetActive(activarPDF2);
-        botonPDF3.gameObject.SetActive(activarPDF3);
+        // Mostrar detalles en UI
+        textoRemitente.text = emailSeleccionado.remitente;
+        // ... (resto del código)
     }
-}
+
+    private void BuscarEmail(string textoBusqueda)
+    {
+        emailsFiltrados = gestorEmpresas.empresas
+            .Where(empresa => empresa.Remitente.ToLower().Contains(textoBusqueda.ToLower()) ||
+                              empresa.Asunto.ToLower().Contains(textoBusqueda.ToLower()) ||
+                              empresa.TextoCorreo.ToLower().Contains(textoBusqueda.ToLower()))
+            .Select(empresa => ObtenerEmailDesdeEmpresa(empresas.IndexOf(empresa)))
+            .ToList();
+
+        // Actualizar la interfaz de usuario para mostrar los emails filtrados
+        // Puedes utilizar un ListView o un sistema de creación de objetos dinámicos para mostrar los resultados
+    }
