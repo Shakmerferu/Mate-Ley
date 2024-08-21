@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Marca la clase Empresa como una extensión de una clase nativa de Unity
 public class Empresa
 {
-    // Propiedades de la clase Empresa
     public string Nombre { get; set; }
     public string Remitente { get; set; }
     public string Asunto { get; set; }
@@ -18,11 +16,11 @@ public class Empresa
     public string PesoCantidad { get; set; }
     public string Destino { get; set; }
     public string FechaCaducidad { get; set; }
+    public bool EsValido { get; set; }
 
-    // Constructor
     public Empresa(string nombre, string remitente, string asunto, string textoCorreo, string archivoAdjunto,
                    string nombreEmpresa, string cuitEmpresa, string domicilioEmpresa, string tipoExportacion,
-                   string numeroDespacho, string pesoCantidad, string destino, string fechaCaducidad)
+                   string numeroDespacho, string pesoCantidad, string destino, string fechaCaducidad, bool esValido)
     {
         Nombre = nombre;
         Remitente = remitente;
@@ -37,78 +35,65 @@ public class Empresa
         PesoCantidad = pesoCantidad;
         Destino = destino;
         FechaCaducidad = fechaCaducidad;
+        EsValido = esValido;
+    }
+
+    public Empresa GenerarEmailFalso()
+    {
+        return new Empresa(
+            Nombre + " (Falso)",
+            Remitente,
+            Asunto,
+            TextoCorreo + " [Información posiblemente incorrecta]",
+            ArchivoAdjunto,
+            NombreEmpresa,
+            CuitEmpresa,
+            DomicilioEmpresa,
+            TipoExportacion,
+            NumeroDespacho,
+            PesoCantidad,
+            Destino,
+            FechaCaducidad,
+            false
+        );
     }
 }
-// Esta clase extiende de MonoBehaviour porque es usada en UnitypublicclassGestorEmpresas : MonoBehaviour
+
 public class GestorEmpresa : MonoBehaviour
 {
     public List<Empresa> empresas;
+    public List<GameObject> pdfButtons;  // Referencias a los botones de PDF
+    public Empresa empresaActual;
 
     void Start()
     {
         empresas = new List<Empresa>();
 
         // Añadir la información de las empresas
-        empresas.Add(new Empresa(
-            "Dulce Pampa", "exportaciones@dulcepampa.com.ar", "Exportación de Miel - Dulce Pampa",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestra miel bajo la marca \"Dulce Pampa\". Agradecemos su colaboración y quedamos a disposición para cualquier información adicional que necesiten.\nSaludos cordiales.\n\nDulce Pampa\nexportaciones@dulcepampa.com.ar",
-            "Certificado de exportación.", "Dulce Pampa", "20-12845378-9", "José Viscardia 500", "Miel",
-            "23101EC01000023A", "9Kg", "China", "5/10/24"));
+        // Ejemplo de inicialización
+        empresas.Add(new Empresa("Empresa1", "remitente1@ejemplo.com", "Asunto1", "Texto del correo 1", "archivo1.pdf",
+                                  "NombreEmpresa1", "CUIT1", "Domicilio1", "TipoExportacion1", "NumeroDespacho1",
+                                  "PesoCantidad1", "Destino1", "FechaCaducidad1", true));
+        empresas.Add(new Empresa("Empresa2", "remitente2@ejemplo.com", "Asunto2", "Texto del correo 2", "archivo2.pdf",
+                                  "NombreEmpresa2", "CUIT2", "Domicilio2", "TipoExportacion2", "NumeroDespacho2",
+                                  "PesoCantidad2", "Destino2", "FechaCaducidad2", true));
+        // Agrega más empresas según sea necesario
 
-        empresas.Add(new Empresa(
-            "Corte Pampeano", "exportaciones@cortepampeano.com.ar", "Exportación de Carne Bovina - Corte Pampeano",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestra carne bovina bajo la marca \"Corte Pampeano\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales\n\nCorte Pampeano\nexportaciones@cortepampeano.com.ar",
-            "Certificado de exportación.", "Corte Pampeano", "20-82745277-9", "José Viscardia 1500", "Carne Bovina",
-            "23121EC01000023A", "5kg", "Chile", "18/12/24"));
+        // Generar emails falsos basados en la lista de empresas reales
+        List<Empresa> emailsFalsos = new List<Empresa>();
+        foreach (Empresa empresa in empresas)
+        {
+            if (Random.value > 0.5f)
+            {
+                emailsFalsos.Add(empresa.GenerarEmailFalso());
+            }
+            else
+            {
+                emailsFalsos.Add(empresa);
+            }
+        }
 
-        empresas.Add(new Empresa(
-            "Trigo del Valle", "exportaciones@trigodelvalle.com.ar", "Exportación de Trigo - Trigo del Valle",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro trigo bajo la marca \"Trigo del Valle\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nTrigo del Valle\nexportaciones@trigodelvalle.com.ar",
-            "Certificado de exportación.", "Trigo del Valle", "20-89945267-9", "José Viscardia 100", "Trigo",
-            "23121EC01000023A", "3kg", "Uruguay", "18/12/24"));
-
-        empresas.Add(new Empresa(
-            "Sal del Caldén", "exportaciones@saldelcalden.com.ar", "Exportación de Sal - Sal del Caldén",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestra sal bajo la marca \"Sal del Caldén\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nSal del Caldén\nexportaciones@saldelcalden.com.ar",
-            "Certificado de exportación.", "Sal del Caldén", "20-97742298-9", "José Viscardia 300", "Sal",
-            "23091EC01000023A", "2kg", "Perú", "20/09/24"));
-
-        empresas.Add(new Empresa(
-            "Maíz del Campo", "exportaciones@maizdelcampo.com.ar", "Exportación de Maíz - Maíz del Campo",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro maíz bajo la marca \"Maíz del Campo\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nMaíz del Campo\nexportaciones@maizdelcampo.com.ar",
-            "Certificado de exportación.", "Maíz del Campo", "20-22948848-9", "José Viscardia 20", "Maíz",
-            "23081EC01000023A", "6kg", "Paraguay", "31/08/24"));
-
-        empresas.Add(new Empresa(
-            "TechPampa", "exportaciones@techpampa.com.ar", "Exportación de Software de Transacciones - TechPampa",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro software de transacciones bajo la marca \"TechPampa\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nTechPampa\nexportaciones@techpampa.com.ar",
-            "Certificado de exportación.", "TechPampa", "20-87658449-9", "José Viscardia 25", "Software",
-            "23081EC01000023A", "N/A", "Estados Unidos", "20/08/24"));
-
-        empresas.Add(new Empresa(
-            "Aceites del Sol", "exportaciones@aceitesdelsol.com.ar", "Exportación de Aceite de Girasol - Aceites del Sol",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro aceite de girasol bajo la marca \"Aceites del Sol\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nAceites del Sol\nexportaciones@aceitesdelsol.com.ar",
-            "Certificado de exportación.", "Aceites del Sol", "20-17158141-9", "José Viscardia 750", "Aceite de girasol",
-            "23101EC01000023A", "4L", "Chile", "15/10/24"));
-
-        empresas.Add(new Empresa(
-            "Cuero Pampeano", "exportaciones@cueropampeano.com.ar", "Exportación de Cuero y Pieles - Cuero Pampeano",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro cuero y pieles bajo la marca \"Cuero Pampeano\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nCuero Pampeano\nexportaciones@cueropampeano.com.ar",
-            "Certificado de exportación.", "Cuero Pampeano", "20-58258845-9", "José Viscardia 250", "Cuero y Pieles",
-            "23111EC01000023A", "9kg", "China", "12/11/24"));
-
-        empresas.Add(new Empresa(
-            "Semillas del Sol", "exportaciones@semillasdelsol.com.ar", "Exportación de Semillas de Girasol - Semillas del Sol",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestras semillas de girasol bajo la marca \"Semillas del Sol\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nSemillas del Sol\nexportaciones@semillasdelsol.com.ar",
-            "Certificado de exportación.", "Semillas del Sol", "20-98929895-9", "José Viscardia 150", "Semillas de girasol",
-            "23091EC01000023A", "10kg", "Chile", "30/09/24"));
-
-        empresas.Add(new Empresa(
-            "YesoPam", "exportaciones@yesopam.com.ar", "Exportación de Yeso - YesoPam",
-            "Estimado equipo de ICOMEX,\nSolicitamos su autorización para exportar nuestro yeso bajo la marca \"YesoPam\". Agradecemos su colaboración y estamos a su disposición para proporcionar cualquier información adicional que requieran.\nSaludos cordiales.\n\nYesoPam\nexportaciones@yesopam.com.ar",
-            "Certificado de exportación.", "YesoPam", "20-19159815-9", "José Viscardia 300", "Yeso",
-            "23131EC01000023A", "8kg", "Bolivia", "20/11/24"));
-
-        // Agrega más empresas según sea necesario...
+        // Seleccionar la primera empresa aleatoriamente (verdadera o falsa)
+        empresaActual = emailsFalsos[Random.Range(0, emailsFalsos.Count)];
     }
 }
